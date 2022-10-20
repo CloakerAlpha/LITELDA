@@ -1,11 +1,12 @@
-package com.smada.app.litelda
+package com.smada.app.litelda.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.smada.app.litelda.R
 
-class MainActivity : AppCompatActivity() {
+class DashboardAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_dashboard)
     }
 }
