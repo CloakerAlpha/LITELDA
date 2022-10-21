@@ -23,7 +23,13 @@ class Account : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+        _binding = FragmentAccountBinding.inflate(layoutInflater)
+
+
+
         return binding.root
     }
+
+    fun onClick(view: View) {}
 
 }

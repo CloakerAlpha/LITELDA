@@ -7,17 +7,20 @@ import android.view.View
 import androidx.core.view.WindowCompat
 import com.smada.app.litelda.R
 import com.smada.app.litelda.databinding.ActivityLoginBinding
+import java.lang.NullPointerException
 
 class LoginAct : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding : ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
         binding =ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
 
     }
 
