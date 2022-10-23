@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sage_green"
+    tools:context=".fragments.BookFragmentX">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="616dp"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgx_pkn"
+                    android:layout_width="308dp"
+                    android:layout_height="270dp"
+                    app:srcCompat="@drawable/x_cover_ppkn" />
+
+                <ImageView
+                    android:id="@+id/imgx_sejarah"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/x_cover_sejarah" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgx_mtk"
+                    android:layout_width="308dp"
+                    android:layout_height="270dp"
+                    app:srcCompat="@drawable/x_cover_mtk" />
+
+                <ImageView
+                    android:id="@+id/imgx_pai"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/x_cover_pai" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgx_bind"
+                    android:layout_width="308dp"
+                    android:layout_height="270dp"
+                    app:srcCompat="@drawable/x_coverbahasaindonesia" />
+
+                <ImageView
+                    android:id="@+id/imgx_bing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/x_coverbahasainggris" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgx_ipa"
+                    android:layout_width="308dp"
+                    android:layout_height="270dp"
+                    app:srcCompat="@drawable/x_cover_ipa" />
+
+                <ImageView
+                    android:id="@+id/imgx_ips"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/x_cover_ips" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgx_imgx_informatika"
+                    android:layout_width="308dp"
+                    android:layout_height="270dp"
+                    app:srcCompat="@drawable/x_coverinformatika" />
+
+                <ImageView
+                    android:id="@+id/imgx_other"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/char_sma" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

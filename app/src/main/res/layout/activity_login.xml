@@ -14,7 +14,7 @@
         android:background="@drawable/loginbackground_layer"
         android:backgroundTint="#61FFFFFF"
         android:backgroundTintMode="multiply"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="false">
 
         <LinearLayout
             android:layout_width="match_parent"

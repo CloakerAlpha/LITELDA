@@ -1,22 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9CAF88"
     tools:context=".activities.DashboardAct">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:background="#9CAF88"
+        android:fillViewport="true"
+        android:paddingBottom="?android:attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical" >
+            android:background="#9CAF88"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgv_coverdashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="236dp"
+                android:background="#F4C4C4"
+                app:srcCompat="@drawable/vector_sdsmpsma" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgv_ips"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_ips"
+                            tools:srcCompat="@drawable/icon_ips" />
+
+                        <TextView
+                            android:id="@+id/tv_category_ips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center|left"
+                            android:text="KELAS 10"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btn_bukuips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:textColor="#000000"
+                            app:icon="@drawable/ic_baseline_double_arrow_24"
+                            app:iconGravity="end"
+                            app:iconSize="50dp"
+                            app:iconTint="#9BAE87" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_xi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgv_bahasa"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            android:padding="15dp"
+                            android:src="@drawable/icon_bahasa"
+                            tools:srcCompat="@drawable/icon_bahasa" />
+
+                        <TextView
+                            android:id="@+id/tv_category_bahasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start|left"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center|start"
+                            android:text="KELAS 11"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btn_bukubahasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:textColor="#000000"
+                            app:icon="@drawable/ic_baseline_double_arrow_24"
+                            app:iconGravity="end"
+                            app:iconSize="50dp"
+                            app:iconTint="#9BAE87" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_xii"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#000000"
+                    android:backgroundTintMode="add">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#000000"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgv_ipa"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            android:padding="15dp"
+                            android:src="@drawable/icon_ipa"
+                            tools:srcCompat="@drawable/icon_ipa" />
+
+                        <TextView
+                            android:id="@+id/tv_category_ipa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center|left"
+                            android:text="KELAS 12"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btn_bukuipa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:textColor="#000000"
+                            app:icon="@drawable/ic_baseline_double_arrow_24"
+                            app:iconGravity="end"
+                            app:iconSize="50dp"
+                            app:iconTint="#9BAE87" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_othersbook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_bukulain"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            android:padding="15dp"
+                            android:src="@drawable/icon_bahasa"
+                            tools:srcCompat="@drawable/icon_bahasa" />
+
+                        <TextView
+                            android:id="@+id/tv_category_bukulain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start|left"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center|start"
+                            android:text="BUKU LAIN"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/button3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:textColor="#000000"
+                            app:icon="@drawable/ic_baseline_double_arrow_24"
+                            app:iconGravity="end"
+                            app:iconSize="50dp"
+                            app:iconTint="#9BAE87" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -49,111 +271,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="125dp"
-                                tools:srcCompat="@tools:sample/avatars" />
-
-                            <TextView
-                                android:id="@+id/textView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="125dp"
-                                tools:srcCompat="@tools:sample/avatars" />
-
-                            <TextView
-                                android:id="@+id/textView1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="125dp"
-                                tools:srcCompat="@tools:sample/avatars" />
-
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -163,8 +280,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemIconSize="30dp"
-        app:itemPaddingTop="1dp"
+        app:itemPaddingTop="5dp"
         app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/botnav_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
@@ -176,5 +295,5 @@
 
     </FrameLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
