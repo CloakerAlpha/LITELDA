@@ -28,6 +28,8 @@
                     android:id="@+id/imgx_pkn"
                     android:layout_width="308dp"
                     android:layout_height="270dp"
+                    android:clickable="true"
+                    android:src="@drawable/x_cover_ppkn"
                     app:srcCompat="@drawable/x_cover_ppkn" />
 
                 <ImageView
@@ -35,6 +37,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/x_cover_sejarah"
                     app:srcCompat="@drawable/x_cover_sejarah" />
             </LinearLayout>
 

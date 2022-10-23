@@ -76,12 +76,13 @@ class DashboardAct : AppCompatActivity(), View.OnClickListener {
 
     fun fragBackButtonHandle() {
         val iconHomeSelected = botnavItem1.selectedItemId
+        val count = supportFragmentManager.backStackEntryCount
 
-        if(iconHomeSelected!= R.id.botnav_home ){
+        if(count==0){
             botnavItem1.selectedItemId = R.id.botnav_home
             supportFragmentManager.beginTransaction().addToBackStack(null).commit()
         } else {
-            this.finish()
+            getSupportFragmentManager().popBackStack();
         }
 
     }
@@ -92,9 +93,7 @@ class DashboardAct : AppCompatActivity(), View.OnClickListener {
                 val fragment : Fragment?
                 fragment = BookFragmentX()
                 loadFragment(fragment)
-                true
-            } else -> false
-
+            }
         }
     }
 

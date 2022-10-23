@@ -1,14 +1,19 @@
 package com.smada.app.litelda.activities
 
-import android.content.DialogInterface
+import android.Manifest.permission.READ_EXTERNAL_STORAGE
+import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.smada.app.litelda.R
 import com.smada.app.litelda.databinding.ActivityLoginBinding
-import com.smada.app.litelda.databinding.FragmentBookXBinding
 import com.smada.app.litelda.sharedpref.AppClassSession.Companion.sessionManager
 import com.smada.app.litelda.sharedpref.SessionManager
 import com.smada.app.litelda.sharedpref.SessionManager.Companion.SESSION_TOKEN
@@ -25,7 +30,7 @@ class LoginAct : AppCompatActivity(), View.OnClickListener {
 
         try {
             this.supportActionBar!!.hide()
-            } catch (e: NullPointerException) {
+            } catch (_: NullPointerException) {
         }
 
         sessionManager = SessionManager(_context = applicationContext)
@@ -36,6 +41,20 @@ class LoginAct : AppCompatActivity(), View.OnClickListener {
         } else { //stay in login page
         }
 
+        checkPermission()
+
+    }
+
+    private fun checkPermission(): Boolean {
+        return if (SDK_INT >= Build.VERSION_CODES.R) {
+            Environment.isExternalStorageManager()
+        } else {
+            val result =
+                ContextCompat.checkSelfPermission(this@LoginAct, READ_EXTERNAL_STORAGE)
+            val result1 =
+                ContextCompat.checkSelfPermission(this@LoginAct, WRITE_EXTERNAL_STORAGE)
+            result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED
+        }
     }
 
 private fun login() {
