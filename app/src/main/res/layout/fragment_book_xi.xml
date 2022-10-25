@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/sage_green"
+    tools:context=".fragments.BookFragmentXI">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="616dp"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_pkn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coverppkn"
+                            app:srcCompat="@drawable/xi_coverppkn" />
+
+                        <TextView
+                            android:id="@+id/tvbook_pkn2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU PPKN KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_sejarah"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coversejarah"
+                            app:srcCompat="@drawable/xi_coversejarah" />
+
+                        <TextView
+                            android:id="@+id/tvbook_sejarah2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU SEJARAH KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_mtk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_covermtk"
+                            app:srcCompat="@drawable/xi_covermtk" />
+
+                        <TextView
+                            android:id="@+id/tvbook_mtk2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU MATEMATIKA KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_pai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coverpai"
+                            app:srcCompat="@drawable/xi_coverpai" />
+
+                        <TextView
+                            android:id="@+id/tvbook_pai2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU PENDIDIKAN AGAMA ISLAM KELAS 10 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_bin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coverbahasaindonesia"
+                            app:srcCompat="@drawable/xi_coverbahasaindonesia" />
+
+                        <TextView
+                            android:id="@+id/tvbook_bin2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU BAHASA INDONESIA KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_bing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coverbahasainggris"
+                            app:srcCompat="@drawable/xi_coverbahasainggris" />
+
+                        <TextView
+                            android:id="@+id/tvbook_bing2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU BAHASA INGGRIS KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_ipa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coverpenjas"
+                            app:srcCompat="@drawable/xi_coverpenjas" />
+
+                        <TextView
+                            android:id="@+id/tvbook_ipa2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU PENDIDIKAN JASMANI KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="252dp"
+                    android:layout_height="310dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:cardBackgroundColor="#616E73"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgxi_ips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:src="@drawable/xi_coverprakarya"
+                            app:srcCompat="@drawable/xi_coverprakarya" />
+
+                        <TextView
+                            android:id="@+id/tvbook_ips2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/aldrich"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:padding="5dp"
+                            android:text="BUKU PRAKARYA KELAS 11 SMA"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

@@ -32,9 +32,21 @@
             android:name=".activities.DashboardAct"
             android:exported="false" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                tools:replace="android:resource"
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
     </application>
 
 </manifest>
+
+<!--<meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" /> -->

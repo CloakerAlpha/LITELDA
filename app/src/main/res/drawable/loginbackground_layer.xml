@@ -9,8 +9,8 @@
         </shape>
     </item>
     <item>
-        <bitmap android:src="@drawable/gambar_coversmada"
+        <bitmap android:src="@drawable/bglogin"
 
-            android:tileMode="repeat" />
+            android:gravity="fill"/>
     </item>
 </layer-list>

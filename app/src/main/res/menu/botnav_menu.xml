@@ -11,9 +11,9 @@
         android:title="Halaman Utama" />
 
     <item
-        android:id="@+id/botnav_favorite"
-        android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="Favorit" />
+        android:id="@+id/botnav_aboutapp"
+        android:icon="@drawable/ic_baseline_help_center_24"
+        android:title="About Us" />
 
 
 

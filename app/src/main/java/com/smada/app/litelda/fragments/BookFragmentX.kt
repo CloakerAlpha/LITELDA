@@ -1,21 +1,23 @@
 package com.smada.app.litelda.fragments
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.content.res.AssetManager
-import android.os.Build
+import android.app.Activity
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
+import androidx.core.app.ShareCompat
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import com.smada.app.litelda.BuildConfig
 import com.smada.app.litelda.R
 import com.smada.app.litelda.databinding.FragmentBookXBinding
-import java.io.*
+import java.io.File
+import java.util.*
 
 
 class BookFragmentX : Fragment(), View.OnClickListener {
@@ -36,6 +38,13 @@ class BookFragmentX : Fragment(), View.OnClickListener {
         _binding = FragmentBookXBinding.inflate(layoutInflater)
         _binding!!.imgxPkn.setOnClickListener(this)
         _binding!!.imgxSejarah.setOnClickListener(this)
+        _binding!!.imgxMtk.setOnClickListener(this)
+        _binding!!.imgxPai.setOnClickListener(this)
+        _binding!!.imgxBin.setOnClickListener(this)
+        _binding!!.imgxBing.setOnClickListener(this)
+        _binding!!.imgxIpa.setOnClickListener(this)
+        _binding!!.imgxIps.setOnClickListener(this)
+        _binding!!.imgxInformatika.setOnClickListener(this)
         return binding.root
     }
 
@@ -43,109 +52,68 @@ class BookFragmentX : Fragment(), View.OnClickListener {
         when(view.id) {
             R.id.imgx_pkn -> {
                 var resourceName = "x_ppkn.pdf"
-                hasWriteStoragePermission()
-                copyAssets()
-                //copyFiletoExternalStorage(R.raw.x_ppkn, resourceName)
-                //popUpDialogFrag()
-
+                openPDF2(resourceName)
             } R.id.imgx_sejarah -> {
-            var resourceName = "x_sejarah.pdf"
-            //copyFiletoExternalStorage(R.raw.x_sejarah, resourceName)
-            //popUpDialogFrag()
-
-        }
-        }
-    }
-
-    private fun hasWriteStoragePermission(): Boolean {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            return true
-        } else
-            if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                val REQUEST_PERMISSIONS_CODE_WRITE_STORAGE = 333
-                requestPermissions(
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    REQUEST_PERMISSIONS_CODE_WRITE_STORAGE
-                )
-
-                return false
-            }
-
-        return true
-    }
-
-    private fun copyAssets() {
-        val assetManager: AssetManager? = activity?.assets
-        var files: Array<String>? = null
-        try {
-            files = assetManager?.list("")
-        } catch (e: IOException) {
-            Log.e("tag", "Failed to get asset file list.", e)
-        }
-        for (filename in files!!) {
-            var `in`: InputStream? = null
-            var out: OutputStream? = null
-            try {
-                `in` = assetManager?.open(filename)
-                val outDir = Environment.getExternalStorageDirectory().absolutePath + "/Download/"
-                val outFile = File(outDir, filename)
-                out = FileOutputStream(outFile)
-                `in`?.let { copyFile(it, out as FileOutputStream) }
-                `in`?.close()
-                out.flush()
-                out.close()
-                out = null
-                Log.d("success_tag", filename+ "copied successfully");
-            } catch (e: IOException) {
-                Log.e("err_tag", "Failed to copy asset file: $filename", e)
+                var resourceName = "x_sejarah.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_mtk -> {
+                var resourceName = "x_mtk.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_pai -> {
+                var resourceName = "all_PAI.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_bin -> {
+                var resourceName = "x_bahasaindonesia.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_bing -> {
+                var resourceName = "x_bahasainggris.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_ipa -> {
+                var resourceName = "x_ipa.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_ips -> {
+                var resourceName = "x_ips.pdf"
+                openPDF2(resourceName)
+            } R.id.imgx_informatika -> {
+                var resourceName = "x_informatika.pdf"
+                openPDF2(resourceName)
             }
         }
     }
 
-    @Throws(IOException::class)
-    private fun copyFile(`in`: InputStream, out: OutputStream) {
-        val buffer = ByteArray(1024)
-        var read: Int
-        while (`in`.read(buffer).also { read = it } != -1) {
-            out.write(buffer, 0, read)
-        }
+    private fun openPDF2(resourceName: String) {
+        val imagePath = File(Environment.getExternalStorageDirectory().absolutePath + "/Download/" + resourceName)
+
+        imagePath.mkdir()
+        val imageFile = File(imagePath.path)
+
+        val popUpDialogAlert: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+
+        /* popUpDialogAlert.setMessage(imageFile.toString())
+        popUpDialogAlert.setTitle("TEST")
+        popUpDialogAlert.setPositiveButton("OK", null)
+        popUpDialogAlert.setCancelable(true)
+        popUpDialogAlert.create().show()
+
+        popUpDialogAlert.setPositiveButton("Ok"
+        ) { _, _ -> } */
+
+        // Write data in your file
+    var uri2 = FileProvider.getUriForFile(
+        Objects.requireNonNull(requireContext()),
+        BuildConfig.APPLICATION_ID + ".provider", imageFile);
+
+        val intent = ShareCompat.IntentBuilder.from(requireContext() as Activity)
+            .setStream(uri2) // uri from FileProvider
+            //.setType("application/pdf")
+            .intent
+            .setDataAndType(uri2, "application/pdf")
+            .setAction(Intent.ACTION_VIEW) //Change if needed
+            .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+        startActivity(Intent.createChooser(intent, "View PDF"));
     }
-
-    /* private fun copyFiletoExternalStorage(resourceId: Int, resourceName: String) {
-         val pathSDCard =
-             (activity?.filesDir?.absolutePath) + resourceName
-             //Environment.getDataDirectory().path + "/Android/" + resourceName
-
-         val popUpDialogAlert: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-         popUpDialogAlert.setMessage(pathSDCard)
-         popUpDialogAlert.setTitle("INFO")
-         popUpDialogAlert.setPositiveButton("OK", null)
-         popUpDialogAlert.setCancelable(true)
-         popUpDialogAlert.create().show()
-
-         popUpDialogAlert.setPositiveButton("Ok"
-         ) { _, _ -> }
-
-         try {
-             val `in` = resources.openRawResource(resourceId)
-             var out: FileOutputStream?
-             out = FileOutputStream(pathSDCard)
-             val buff = ByteArray(1024)
-             var read: Int
-             try {
-                 while (`in`.read(buff).also { read = it } > 0) {
-                     out.write(buff, 0, read)
-                 }
-             } finally {
-                 `in`.close()
-                 out.close()
-             }
-         } catch (e: FileNotFoundException) {
-             e.printStackTrace()
-         } catch (e: IOException) {
-             e.printStackTrace()
-         }
-     } */
 
     private fun popUpDialogFrag(){
         val popUpDialogAlert: AlertDialog.Builder = AlertDialog.Builder(requireContext())
